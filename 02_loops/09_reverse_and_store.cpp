@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
     long long n;
-    int reverse = 0;
+    long long reverse = 0;
     cout << "enter a number: ";
     cin >> n;
     while (n!=0) {
