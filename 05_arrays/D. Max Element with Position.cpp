@@ -9,14 +9,16 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
-    
-    int max = arr[0];
+
+    int max = arr[0], position = 1;
 
     for (int i = 1; i < n; i++) {
         if (arr[i] > max) {
             max = arr[i];
+            position = i + 1;
         }
-    } 
-    cout << "max value = " << max;
+    }
+
+    cout << max << " " << position << endl;
     return 0;
 }
