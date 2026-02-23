@@ -40,7 +40,6 @@ int main() {
 
 
     // use ternary operator instead of this pile of crap
-    cout << flag ? "YES" : "NO";
     // condition ? value_if_true : value_if_false
 
     cout << (flag ? "YES" : "NO");
