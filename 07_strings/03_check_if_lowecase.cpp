@@ -3,7 +3,7 @@ using namespace std;
 int main() {
     char ch;
     cin >> ch;
-    if (ch >= 97 and ch <= 122) {
+    if (ch >= 'a' and ch <= 'z') {
         cout << ch << " is lowercase";
     }
     else {
