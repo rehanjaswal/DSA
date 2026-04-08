@@ -1,33 +1,36 @@
 #include <iostream>
 using namespace std;
 int main() {
-
     int n, target;
-    cin >> n >> target;
-    int l = 0, r = n - 1, arr[n];
+    cin >> n;
+    cin >> target;
+    int arr[n];
 
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
+    int leftIndex = 0, rightIndex = n - 1;
     bool flag = false;
 
-    while (l <= r) {
-        int mid = (l + r) / 2;
+    while(leftIndex <= rightIndex) {
+        int middleIndex = (leftIndex + rightIndex) / 2;
 
-        if (arr[mid] == target) {
+        if(arr[middleIndex] == target) {
             flag = true;
             break;
         }
-        else if (arr[mid] > target) {
+        else if(arr[middleIndex] > target) {
             // search on the left
-            r = mid - 1;
+            rightIndex = middleIndex - 1; 
         }
-        else if (arr[mid] < target) {
-            // search on the fucking right mate
-            l = mid + 1;
-        }    
+        else {
+            // search on the right
+            leftIndex = middleIndex + 1;
+        }
     }
+    
+    cout << (flag ? "yes\n" : "no\n");
 
-    cout << (flag ? "YES" : "NO");
+    return 0;
 }
