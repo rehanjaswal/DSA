@@ -13,14 +13,14 @@ int main() {
     int leftIndex = 0, rightIndex = n - 1;
     bool flag = false;
 
-    while(leftIndex <= rightIndex) {
+    while (leftIndex <= rightIndex) {
         int middleIndex = (leftIndex + rightIndex) / 2;
 
-        if(arr[middleIndex] == target) {
+        if (arr[middleIndex] == target) {
             flag = true;
             break;
         }
-        else if(arr[middleIndex] > target) {
+        else if (arr[middleIndex] > target) {
             // search on the left
             rightIndex = middleIndex - 1; 
         }
