@@ -25,13 +25,17 @@ int main() {
         }
     
         // lr: lc - 1 -> fc
-        for (int j = lastCol - 1; j >= firstCol; j--) {
-            cout << arr[lastRow][j] << " ";
+        if (firstRow != lastRow) {
+            for (int j = lastCol - 1; j >= firstCol; j--) {
+                cout << arr[lastRow][j] << " ";
+            }
         }
 
         // fc: lr - 1 -> fr + 1
-        for (int i = lastRow - 1; i >=  firstRow + 1; i--) {
-            cout << arr[i][firstCol] << " ";
+        if (firstCol != lastCol) {
+            for (int i = lastRow - 1; i >=  firstRow + 1; i--) {
+                cout << arr[i][firstCol] << " ";
+            }
         }
 
         firstRow++;
