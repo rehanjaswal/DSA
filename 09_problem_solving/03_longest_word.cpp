@@ -1,29 +1,24 @@
 #include <iostream>
-#include <string>
 using namespace std;
 int main() {
     string s;
-    getline(cin, s);
-
-    int i = 0, n = s.size(), maxCount = 0;
-
+    cin >> s;
+    int n = s.size(), i = 0, maxCount = 0;
     while (i < n) {
         if (s[i] == ' ') {
             i++;
             continue;
         }
-        int j = i, wordCount = 0;
+        int j = i, count = 0;
         while (j < n and s[j] != ' ') {
-            wordCount++;
+            count++;
             j++;
         }
-        if (wordCount > maxCount) {
-            maxCount = wordCount;
+        if (count > maxCount) {
+            maxCount = count;
         }
         i = j;
     }
-
     cout << maxCount << endl;
-
-    return 0;
+return 0;
 }

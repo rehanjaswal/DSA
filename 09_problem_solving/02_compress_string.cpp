@@ -1,26 +1,23 @@
-// aabbcccc
-// compress it to a3b2c4
-
+// compress abbcccdd to -> ab2c3d2
 #include <iostream>
 using namespace std;
 int main() {
     string s;
     cin >> s;
+    int n = s.size(), i = 0;
 
-    int i = 0, n = s.size();
     while (i < n) {
-        int j = i, counter = 0;
+        int j = i;
+        int count = 0;
         while (j < n and s[i] == s[j]) {
-            counter++;
+            count++;
             j++;
         }
         cout << s[i];
-        if (counter > 1) {
-            cout << counter;
+        if (count > 1) {
+            cout << count;
         }
         i = j;
-    } 
-    cout << endl;
-    
-    return 0;
+    }
+return 0;
 }
