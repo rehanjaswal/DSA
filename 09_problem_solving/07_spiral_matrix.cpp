@@ -4,45 +4,38 @@ int main() {
     int n, m;
     cin >> n >> m;
     int arr[n][m];
-
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> arr[i][j];
         }
     }
-
-    int firstRow = 0, lastRow = n - 1, firstCol = 0, lastCol = m - 1;
-
-    while (firstRow <= lastRow and firstCol <= lastCol) {
-        // fr: sc -> lc
-        for (int j = firstCol; j <= lastCol; j++) {
-            cout << arr[firstRow][j] << " ";
+    int sr = 0, er = n - 1, sc = 0, ec = m - 1;
+    while (sr <= er and sc <= ec) {
+        // first row, i = sr and j from sc to ec
+        for (int j = sc; j <= ec; j++) {
+            cout << arr[sr][j] << " ";
         }
-
-        // lc: fr + 1 -> lr
-        for (int i = firstRow + 1; i <= lastRow; i++) {
-            cout << arr[i][lastCol] << " ";
+        // last column, j = ec and i from sr + 1 to er
+        for (int i = sr + 1; i <= er; i++) {   
+            cout << arr[i][ec] << " ";
         }
-    
-        // lr: lc - 1 -> fc
-        if (firstRow != lastRow) {
-            for (int j = lastCol - 1; j >= firstCol; j--) {
-                cout << arr[lastRow][j] << " ";
+        // last row, i = er and j from ec - 1 to sc
+        if (sr != er) {
+            for (int j = ec - 1; j >= sc; j--) {  
+            cout << arr[er][j] << " ";
             }
         }
-
-        // fc: lr - 1 -> fr + 1
-        if (firstCol != lastCol) {
-            for (int i = lastRow - 1; i >=  firstRow + 1; i--) {
-                cout << arr[i][firstCol] << " ";
+        if (sc != ec) {
+              // first column, j = sc and i from er - 1 to sr + 1
+            for (int i = er - 1; i >= sr + 1; i--) {
+                cout << arr[i][sc] << " ";
             }
         }
-
-        firstRow++;
-        firstCol++;
-        lastRow--;
-        lastCol--;
+        cout << endl;
+        sr++;
+        er--;
+        sc++;
+        ec--;
     }
-
-    return 0;
+return 0;
 }
