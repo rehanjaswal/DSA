@@ -1,4 +1,4 @@
-//  TC -> O(n) and SC -> O(1)
+// TC -> O(n) and SC -> O(1)
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
@@ -6,13 +6,16 @@ int main() {
     cin >> n >> k;
     vector<int> arr(n);
     for (int i = 0; i < n; i++) cin >> arr[i];
-    // build the answer for the first window
-    int sum = 0;
-    for (int i = 0; i < k; i++) sum += arr[i];
-    int ans = sum;
-    // calculate the answer for the remaining windows
+    
+    int sum = 0, ans = INT_MIN;
+    // build the first sliding window
+    for (int i = 0; i < k; i++) {
+        sum += arr[i];
+    }
+    // calculate the sums of the remaining sliding windows, and compare var sum with var ans
     for (int i = k; i < n; i++) {
-        sum = sum + arr[i] - arr[i - k];
+        sum += arr[i];
+        sum -= arr[i - k];
         ans = max(ans, sum);
     }
     cout << ans << endl;
