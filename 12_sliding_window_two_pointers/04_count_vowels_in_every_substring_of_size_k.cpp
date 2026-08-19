@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool isVowel(char ch) {
+    ch = tolower(ch);
+    return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+}
+int main() {
+    string s;
+    cin >> s;
+    int k;
+    cin >> k;
+    int count = 0;
+    for (int i = 0; i < k; i++) {
+        if (isVowel(s[i])) count++;
+    }
+    cout << count << " ";
+    for (int i = k; i < s.size(); i++) {
+        if (isVowel(s[i])) count++;
+        if (isVowel(s[i - k])) count--;
+        cout << count << " ";
+    }
+return 0;
+}
