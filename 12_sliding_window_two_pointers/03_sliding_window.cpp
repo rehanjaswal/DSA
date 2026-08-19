@@ -12,6 +12,7 @@ int main() {
     for (int i = 0; i < k; i++) {
         sum += arr[i];
     }
+    ans = sum;
     // calculate the sums of the remaining sliding windows, and compare var sum with var ans
     for (int i = k; i < n; i++) {
         sum += arr[i];
