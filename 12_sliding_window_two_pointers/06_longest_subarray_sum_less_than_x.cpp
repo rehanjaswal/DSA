@@ -6,7 +6,7 @@ int main() {
     vector<int> nums(n);
     for (int i = 0; i < n; i++) cin >> nums[i];
 
-    int l = 0, sum = 0, maxLength = 0;
+    int sum = 0, l = 0, maxLength = 0;
     for (int r = 0; r < n; r++) {
         sum += nums[r];
         while (sum >= x) {
