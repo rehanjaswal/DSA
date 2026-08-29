@@ -7,15 +7,16 @@ int main() {
     vector<int> nums(n);
     for (int i = 0; i < n; i++) cin >> nums[i];
     unordered_map<int, int> freq;
-    int l = 0, mxLen = 0;
+    
+    int l = 0, count = 0;
     for (int r = 0; r < n; r++) {
         freq[nums[r]]++;
         while (freq[nums[r]] > 1) {
             freq[nums[l]]--;
             l++;
         }
-        mxLen = max(mxLen, r - l + 1);
+        count += r - l + 1;
     }
-    cout << mxLen << endl;
+    cout << count << endl;
 return 0;
 }
